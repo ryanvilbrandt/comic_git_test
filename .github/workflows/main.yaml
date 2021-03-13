@@ -45,4 +45,4 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "Auto-build"
       - name: Push changes
         run: |
-          git push -f --set-upstream-to origin master
+          git push -f --set-upstream origin master
