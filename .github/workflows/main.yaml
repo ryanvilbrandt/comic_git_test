@@ -16,10 +16,9 @@ jobs:
         python-version: [3.8]
 
     steps:
-      - name: Checkout master branch and build website
-        uses: actions/checkout@v2
-        with:
-          ref: master
+      - name: Checkout master branch (or create if it doesn't exist)
+        run: |
+          git switch master 2>/dev/null || git switch -c master
       - name: Reset master to point to working's HEAD
         run: |
           git fetch --all --no-tags
