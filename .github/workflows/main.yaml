@@ -16,6 +16,8 @@ jobs:
         python-version: [3.8]
 
     steps:
+      - name: Load repository
+        uses: actions/checkout@v2
       - name: Checkout master branch (or create if it doesn't exist)
         run: |
           git switch master 2>/dev/null || git switch -c master
